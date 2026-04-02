@@ -1,23 +1,23 @@
 # 📋 Task Manager API
 
-API REST para gerenciamento de tarefas, desenvolvida com **Spring Boot** como projeto de portfólio.
+REST API for task management, built with **Spring Boot** as a portfolio project.
 
-## 🚀 Tecnologias
+## 🚀 Tech Stack
 
-| Tecnologia | Versão | Propósito |
-|-----------|--------|-----------|
-| Java | 17 | Linguagem principal |
-| Spring Boot | 3.2 | Framework web |
-| Spring Data JPA | 3.2 | Acesso ao banco de dados |
-| H2 Database | - | Banco em memória (dev/demo) |
-| Swagger/OpenAPI | 2.3 | Documentação automática |
-| Lombok | - | Redução de código boilerplate |
-| JUnit 5 + Mockito | - | Testes unitários |
-| Maven | 3.x | Gerenciamento de dependências |
+| Technology       | Version | Purpose                  |
+|-----------------|---------|--------------------------|
+| Java            | 17      | Main language            |
+| Spring Boot     | 3.2     | Web framework            |
+| Spring Data JPA | 3.2     | Database access          |
+| H2 Database     | -       | In-memory DB (dev/demo)  |
+| Swagger/OpenAPI | 2.3     | Auto-generated docs      |
+| Lombok          | -       | Boilerplate reduction    |
+| JUnit 5 + Mockito | -     | Unit testing             |
+| Maven           | 3.x     | Dependency management    |
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
-O projeto segue a arquitetura em camadas padrão do mercado:
+The project follows standard layered architecture:
 
 ```
 Controller  →  Service  →  Repository  →  Banco de Dados
@@ -25,74 +25,73 @@ Controller  →  Service  →  Repository  →  Banco de Dados
    DTO           Model
 ```
 
-- **Controller**: recebe requisições HTTP, valida entrada, retorna respostas
-- **Service**: contém regras de negócio, faz conversão entre DTOs e entidades
-- **Repository**: acesso ao banco de dados (Spring Data JPA)
-- **Model**: entidades do banco de dados
-- **DTO**: objetos de transferência de dados (entrada e saída da API)
-- **Exception**: tratamento centralizado de erros
+- **Controller**: receives HTTP requests, validates input, returns responses
+- **Service**: contains business logic, converts between DTOs and entities
+- **Repository**: database access layer (Spring Data JPA)
+- **Model**: database entities
+- **DTO**: data transfer objects (API input and output)
+- **Exception**: centralized error handling
 
-## 📦 Como rodar
+## 📦 How to Run
 
-### Pré-requisitos
+### Requirements
 - Java 17+
 - Maven 3.6+
 
-### Passos
-
+### Steps
 ```bash
-# Clonar o projeto
-git clone https://github.com/seu-usuario/task-manager.git
+# Clone the project
+git clone https://github.com/your-username/task-manager.git
 cd task-manager
 
-# Compilar e rodar
+# Build and run
 mvn spring-boot:run
 ```
 
-A aplicação sobe em `http://localhost:8080`
+Application runs at `http://localhost:8080`
 
-## 📖 Documentação da API
+## 📖 API Documentation
 
-Após subir a aplicação, acesse:
+After starting the application, visit:
 - **Swagger UI**: http://localhost:8080/swagger-ui.html
 - **H2 Console**: http://localhost:8080/h2-console
 
 ## 🔗 Endpoints
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/v1/tasks` | Listar todas as tarefas |
-| GET | `/api/v1/tasks?status=TODO` | Filtrar por status |
-| GET | `/api/v1/tasks?priority=HIGH` | Filtrar por prioridade |
-| GET | `/api/v1/tasks/{id}` | Buscar por ID |
-| GET | `/api/v1/tasks/search?keyword=texto` | Buscar por palavra-chave |
-| GET | `/api/v1/tasks/summary` | Resumo estatístico |
-| POST | `/api/v1/tasks` | Criar tarefa |
-| PUT | `/api/v1/tasks/{id}` | Atualizar tarefa completa |
-| PATCH | `/api/v1/tasks/{id}/status?status=DONE` | Atualizar status |
-| DELETE | `/api/v1/tasks/{id}` | Remover tarefa |
+| Method | Endpoint                              | Description              |
+|--------|---------------------------------------|--------------------------|
+| GET    | `/api/v1/tasks`                       | List all tasks           |
+| GET    | `/api/v1/tasks?status=TODO`           | Filter by status         |
+| GET    | `/api/v1/tasks?priority=HIGH`         | Filter by priority       |
+| GET    | `/api/v1/tasks/{id}`                  | Get by ID                |
+| GET    | `/api/v1/tasks/search?keyword=text`   | Search by keyword        |
+| GET    | `/api/v1/tasks/summary`               | Statistical summary      |
+| POST   | `/api/v1/tasks`                       | Create task              |
+| PUT    | `/api/v1/tasks/{id}`                  | Full update              |
+| PATCH  | `/api/v1/tasks/{id}/status?status=DONE` | Update status only     |
+| DELETE | `/api/v1/tasks/{id}`                  | Delete task              |
 
-## 📝 Exemplos de Requisição
+## 📝 Request Examples
 
-### Criar tarefa
+### Create a task
 ```http
 POST /api/v1/tasks
 Content-Type: application/json
 
 {
-  "title": "Estudar Spring Boot",
-  "description": "Completar tutorial de API REST",
+  "title": "Study Spring Boot",
+  "description": "Complete the REST API tutorial",
   "priority": "HIGH",
   "dueDate": "2024-12-31T23:59:00"
 }
 ```
 
-### Resposta
+### Response
 ```json
 {
   "id": 1,
-  "title": "Estudar Spring Boot",
-  "description": "Completar tutorial de API REST",
+  "title": "Study Spring Boot",
+  "description": "Complete the REST API tutorial",
   "status": "TODO",
   "priority": "HIGH",
   "createdAt": "2024-01-15T10:30:00",
@@ -101,34 +100,36 @@ Content-Type: application/json
 }
 ```
 
-## ✅ Testes
-
+## ✅ Tests
 ```bash
-# Rodar todos os testes
+# Run all tests
 mvn test
 ```
 
-## 🎯 Boas Práticas Aplicadas
+## 🎯 Best Practices Applied
 
-- ✅ **Arquitetura em camadas** (Controller → Service → Repository)
-- ✅ **DTOs** para separar a API do banco de dados
-- ✅ **Validação de entrada** com Bean Validation
-- ✅ **Tratamento de erros** centralizado com `@RestControllerAdvice`
-- ✅ **Exceções customizadas** (`TaskNotFoundException`)
-- ✅ **Versionamento de API** (`/api/v1/`)
-- ✅ **Códigos HTTP semânticos** (200, 201, 204, 404)
-- ✅ **Documentação automática** com Swagger
-- ✅ **Testes unitários** com JUnit 5 + Mockito
-- ✅ **Logs** com SLF4J/Logback
-- ✅ **Princípio DRY** (sem repetição de código)
+- ✅ **Layered architecture** (Controller → Service → Repository)
+- ✅ **DTOs** to decouple API from database
+- ✅ **Input validation** with Bean Validation
+- ✅ **Centralized error handling** with `@RestControllerAdvice`
+- ✅ **Custom exceptions** (`TaskNotFoundException`)
+- ✅ **API versioning** (`/api/v1/`)
+- ✅ **Semantic HTTP status codes** (200, 201, 204, 404)
+- ✅ **Auto-generated documentation** with Swagger
+- ✅ **Unit tests** with JUnit 5 + Mockito
+- ✅ **Logging** with SLF4J/Logback
+- ✅ **DRY principle** (no code repetition)
 
-## 🔮 Próximos Passos (Melhorias Futuras)
+## 🔮 Future Improvements
 
-- [ ] Autenticação com Spring Security + JWT
-- [ ] Migrar para PostgreSQL em produção
-- [ ] Paginação na listagem de tarefas
-- [ ] Testes de integração
-- [ ] Deploy no Railway/Render
+- [ ] Authentication with Spring Security + JWT
+- [ ] Migrate to PostgreSQL for production
+- [ ] Pagination for task listing
+- [ ] Integration tests
+- [ ] Deploy to Railway/Render
+
+---
+Developed as a portfolio project to demonstrate Backend development skills in Java.
 
 ---
 Desenvolvido como projeto de portfólio para demonstrar habilidades com desenvolvimento Backend em Java.
