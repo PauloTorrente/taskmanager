@@ -1,0 +1,12 @@
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/dto/TaskDTO.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/config/DataInitializer.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/config/OpenApiConfig.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/exception/TaskNotFoundException.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/model/Task.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/service/TaskService.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/model/TaskPriority.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/controller/TaskController.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/model/TaskStatus.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/exception/GlobalExceptionHandler.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/repository/TaskRepository.java
+/mnt/c/Users/Trabalho/Documents/taskmanager/taskmanager/src/main/java/com/portfolio/taskmanager/TaskManagerApplication.java
